@@ -2,12 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Contingent Page</title>
+    {% load staticfiles %}
+
+
+    <link href="{%static 'form.css' %}" rel="stylesheet" />
+
+
+
+    <title>Contingent Registration</title>
   </head>
   <body>
     <h1>Main Contingent Registration Page</h1>
-    <form>
-        Number: <input type="number" name="Number"><br>
+    <hr>
+    <form method="POST"> {% csrf_token %}
+        <!--Number: <input type="number" name="Number"><br>
         Name: <input type="text" name="Name"><br />
 		    Phone Number:<input type="text" name="Phone"><br />
 		    College: <input type="text" name="College"><br />
@@ -18,12 +26,16 @@
           <option value="cash">Cash</option>
           <option value="paytm">PayTm</option>
           <option value="googlepay">GooglePay</option>
-        </select>
+        </select-->
 
 
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+        {{ form.as_p }}
+
+        <input class='button' type="submit" value="Submit">
+      </form>
+      <form action="{% url 'home' %}">
+    		<input class='button' type="submit" value="Back">
+    	</form>
 
   </body>
 </html>

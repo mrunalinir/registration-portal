@@ -8,12 +8,15 @@ def event(request):
     if request.method == "POST":
         form = EventForm(request.POST)
         if form.is_valid():
-            Event.objects.create(**form.cleaned_data)
+            context=Event.objects.create(**form.cleaned_data)
 
+            return render(request, 'done.html', {'form':context})
     form = EventForm()
     context = {'form':form}
-
     return render(request, 'event.html', context)
+
+def done(request):
+    return render(request, 'done.html')
 
 
 def display(request):

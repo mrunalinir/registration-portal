@@ -1,0 +1,47 @@
+
+ body{
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+ }
+
+
+table
+{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td,
+{
+  border: 1px solid black;
+}
+
+th, td
+{
+  text-align: left;
+  padding: 10px;
+}
+
+ tr:nth-child(odd)
+ {
+   background-color: #f2f2f2;
+ }
+
+ input
+ {
+   padding: 10px;
+   border: none;
+   background-color: gray;
+   color: white;
+   margin: 10px;
+   width: 250px;
+ }
+
+ input:hover
+ {
+   cursor: pointer;
+   background-color: #2f2f2f;
+   color: white;
+ }

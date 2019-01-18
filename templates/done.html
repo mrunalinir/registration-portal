@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    {% load staticfiles %}
+
+
+    <link href="{%static 'form.css' %}" rel="stylesheet" />
+
     <meta charset="utf-8">
-    <title>REGISTERED!</title>
+    <title>REGISTRATION CONFIRMATION</title>
   </head>
   <body>
-    <h2> Congratulations! You have been registered! </h2>
-    <form action="{% url 'home' %}">
-      <input type="submit" value="Back">
-    </form>
+  <h1>REGISTRATION CONFIRMATION</h1>
+  <hr>
+  <h3> Congratulations {{ form.name }}</h3>
+  <h4> You have been registered with VM ID {{ form.vmid }}</h4>
+  <p>!! DO NOT REFRESH THIS PAGE !!</p>
+  <form action = "{% url 'event' %}">
+    <input class='button' type ='submit' value='REGISTER ANOTHER'>
+  </form>
+
+
+
   </body>
 </html>

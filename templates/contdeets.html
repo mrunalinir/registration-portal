@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-{% load staticfiles %}
   <head>
-<link href="{%static 'style.css' %}" rel="stylesheet" />
+    {% load staticfiles %}
+
+
+    <link href="{%static 'style.css' %}" rel="stylesheet" />
     <meta charset="utf-8">
-    <title>Registered Events</title>
+    <title>Registered Contingents</title>
   </head>
   <body>
-    <h1>Registered for Events</h1>
-    <hr>
+    <h1>Registered Contingents</h1>
+    <br>
     <form action="{% url 'home' %}">
       <input type="submit" value="Back">
     </form>
     <table>
       <tr>
         <th>VM ID</th>
+        <th>Contingent</th>
         <th>Name</th>
         <th>Phone Number</th>
-        <th>College</th>
         <th>Email ID</th>
         <th>Mode of Payment</th>
       </tr>
@@ -25,9 +27,9 @@
 
       <tr >
         <td>{{item.vmid}}</td>
+        <td>{{item.contingent}}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.phone }} </td>
-        <td>{{ item.college }}</td>
         <td>{{ item.email }}</td>
         <td>{{item.mode}}</td>
       </tr>

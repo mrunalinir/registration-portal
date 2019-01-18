@@ -7,3 +7,18 @@ class Event(models.Model):
     college = models.CharField(max_length=200)
     email = models.EmailField(blank=True, null=True)
     mode = models.CharField(max_length=10, null=True)
+
+    def vmid(self):
+        if self.id/10<1:
+            self.vmid="VM19E000"+str(self.id)
+
+        elif self.id/10<10:
+            self.vmid="VM19E00"+str(self.id)
+
+        elif self.id/10<100:
+            self.vmid="VM19E0"+str(self.id)
+
+        else:
+            self.vmid="VM19E"+str(self.id)
+
+        return self.vmid

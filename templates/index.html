@@ -1,19 +1,33 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head>{% load staticfiles %}
+
+
+<link href="{%static 'index.css' %}" rel="stylesheet" />
+
 	<title>VM Registration</title>
 </head>
 
 <body>
-	<h3>WELCOME TO VM REGISTRATION PORTAL!</h3>
+	<h1>VM REGISTRATION PORTAL</h1>
+	<hr>
+	<p>Register Here:</p>
 	<form action="{% url 'event' %}">
-		<input type="submit" value="Event"><br/>
+		<input type="submit" value="Event Registration"><br/>
 	</form>
 
 	<form action="{% url 'contingent' %}">
-		<input type="submit" value="Contingent"></br>
+		<input type="submit" value="Contingent Registration"></br>
+	</form>
+	<br>
+	<p>Databases:</p>
+	<form action="{% url 'eventdone' %}">
+		<input type="submit" value="Event Database"><br/>
 	</form>
 
+	<form action="{% url 'contdone' %}">
+		<input type="submit" value="Contingent Database"></br>
+	</form>
 
 </body>
 </html>

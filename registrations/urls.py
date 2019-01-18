@@ -19,13 +19,16 @@ from . import views
 from django.conf import settings
 import event.views
 import contingent.views
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('', views.index, name="home"),
     path('event/', event.views.event, name='event'),
     path('contingent/', contingent.views.contingent, name='contingent'),
-    path('done/', views.done, name="fin"),
-    path('registrations/', event.views.display, name='eventdone'),
+    path('eventregistrations/', event.views.display, name='eventdone'),
+    path('contingentregistrations/', contingent.views.display, name='contdone'),
+    path('done/', event.views.done, name='edone'),
+    path('codone/', contingent.views.done, name='cdone'),
 	path('admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
