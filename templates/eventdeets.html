@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registered</title>
+  </head>
+  <body>
+    <h1>Registered</h1>
+    <table>
+      <tr>
+        <th>VM ID</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>College</th>
+        <th>Email ID</th>
+        <th>Mode of Payment</th>
+      </tr>
+    {% for item in obj.all %}
+
+      <tr >
+        <td>2019VME{{item.id}}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.phone }} </td>
+        <td>{{ item.college }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{item.mode}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  </body>
+</html>

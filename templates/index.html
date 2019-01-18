@@ -5,19 +5,14 @@
 </head>
 
 <body>
-	<h3>WELCOME TO VM REGISTRATION PORTAL</h3>
-	<form action="{% url 'fin' %}">
-		Name: <input type="text" name="Name"><br />
-		Phone Number:<input type="text" name="Phone"><br />
-		College: <input type="text" name="College"><br />
-		Email ID: <input type="text" name="Email"><br />
-		<!--Type: <input type="radio">-->
-		<input type="submit" value="Submit"><br />
-
-
+	<h3>WELCOME TO VM REGISTRATION PORTAL!</h3>
+	<form action="{% url 'event' %}">
+		<input type="submit" value="Event"><br/>
 	</form>
 
-
+	<form action="{% url 'contingent' %}">
+		<input type="submit" value="Contingent"></br>
+	</form>
 
 
 </body>
