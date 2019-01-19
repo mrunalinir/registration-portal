@@ -28,5 +28,10 @@ form, p
 {
   background: #f2f2f2;
   padding: 10px;
-  
+
 }
+
+input, select
+{border:solid 1px #9f9f9f;
+padding: 5px;
+margin: 5px;}

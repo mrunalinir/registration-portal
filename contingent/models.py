@@ -11,15 +11,15 @@ class Contingent(models.Model):
 
     def vmid(self):
         if self.id/10<1:
-            self.vmid="VM19C000"+str(self.id)
+            self.vmid="VM19CA000"+str(self.id)
 
         elif self.id/10<10:
-            self.vmid="VM19C00"+str(self.id)
+            self.vmid="VM19CA00"+str(self.id)
 
         elif self.id/10<100:
-            self.vmid="VM19C0"+str(self.id)
+            self.vmid="VM19CA0"+str(self.id)
 
         else:
-            self.vmid="VM19C"+str(self.id)
+            self.vmid="VM19CA"+str(self.id)
 
         return self.vmid

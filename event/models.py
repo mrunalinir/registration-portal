@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Event(models.Model):
@@ -10,15 +11,15 @@ class Event(models.Model):
 
     def vmid(self):
         if self.id/10<1:
-            self.vmid="VM19E000"+str(self.id)
+            self.vmid="VM19EA000"+str(self.id)
 
         elif self.id/10<10:
-            self.vmid="VM19E00"+str(self.id)
+            self.vmid="VM19EA00"+str(self.id)
 
         elif self.id/10<100:
-            self.vmid="VM19E0"+str(self.id)
+            self.vmid="VM19EA0"+str(self.id)
 
         else:
-            self.vmid="VM19E"+str(self.id)
+            self.vmid="VM19EA"+str(self.id)
 
         return self.vmid

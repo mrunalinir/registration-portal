@@ -2,11 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import EventForm
 from .models import Event
+from django.utils import timezone
+
 # Create your views here.
 def event(request):
     form = EventForm()
     if request.method == "POST":
         form = EventForm(request.POST)
+
         if form.is_valid():
             context=Event.objects.create(**form.cleaned_data)
 
